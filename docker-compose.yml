@@ -6,4 +6,4 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./:/app
+      - ${TARGET_DIR:?Target directory must be specified.}:/app
