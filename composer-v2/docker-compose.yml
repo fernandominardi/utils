@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  composer:
+    build: ./
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${TARGET_DIR:?Target directory must be specified.}:/var/www/html
