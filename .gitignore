@@ -1,0 +1,8 @@
+# Exclude everything specific directories and files.
+# The `.gitignore` file itself needs to be one of the negations.
+/*
+!.gitignore
+
+# Directories and files explicitly negated form the exclusion.
+!/composer-v2/
+!/node-v16/
