@@ -1,5 +1,15 @@
+#!/bin/bash
+
+# Get the current script's directory, and then use it to prepare
+# the absolute path of the Docker Compose file to be used.
 SCRIPT_DIR=$(dirname $0)
 DOCKERFILE="${SCRIPT_DIR}/docker-compose.yml"
+# Resulting files need to be outputted in the directory from which 
+# this script is being run, so we save that location. The variable 
+# whoever needs to be used inside the Docker Compose file, which 
+# is going to be triggered next, so we make sure the environment 
+# variable is passed to all child processes.
 export TARGET_DIR="${PWD}"
+# Run the `npm` service defined in docker-compose.yml, while 
+# passing all received arguments.
 docker compose -f ${DOCKERFILE} run --rm npm "$@"
-

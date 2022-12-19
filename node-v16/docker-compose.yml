@@ -2,8 +2,11 @@ version: "3.9"
 
 services:
   npm:
+    # Build from the Dockerfile on the current working directory. 
     build: ./
+    # Allow interactive shell.
     stdin_open: true
     tty: true
+    # Create a volume syncing: a host's target directory and the container's default working directory.
     volumes:
       - ${TARGET_DIR:?Target directory must be specified.}:/app
