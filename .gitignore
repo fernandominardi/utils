@@ -1,10 +1,11 @@
-# Exclude everything specific directories and files.
+# Exclude everything except specific directories and files.
 # The `.gitignore` file itself needs to be one of the negations.
 /*
 !.gitignore
 
 # Directories and files explicitly negated form the exclusion.
 !/composer-v2/
+!/jquery-plugins/
 !/node-v16/
 !README.md
 !LICENSE
